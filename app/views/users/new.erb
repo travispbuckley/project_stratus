@@ -1,0 +1,21 @@
+<div class="container">
+<% if @errors %>
+  <h3> ERRORS: </h3>
+  <% @errors.each do |error| %>
+    <%= error %>
+    <br>
+  <%end %>
+<br>
+<% end %>
+
+  <form method="post" action="/users">
+    <label> Username:</label>
+    <input name="user[username]" type="text">
+    <label>Email:</label>
+    <input name="user[email]" type="text">
+    <label>Password:</label>
+    <input name="user[password]" type="password">
+
+    <input type="submit" value="Register">
+  </form>
+</div>

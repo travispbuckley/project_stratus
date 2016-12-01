@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,8 +15,21 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+<title>Project Stratus</title>
 </head>
+<div class="container">
+  <a href="/">home</a>
+  <% if logged_in? %>
+    <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+    <form action="/sessions" method="post" id="logout">
+    <input type="hidden" name="_method" value="delete">
+    <input type='submit' value='Logout'>
+  </form>
+  <% else %>
+    <a href="/users/new">register</a>
+    <a href="/sessions/new">Login</a>
+  <% end %>
+</div>
 <body>
   <%= yield %>
 </body>

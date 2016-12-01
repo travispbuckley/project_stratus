@@ -1,0 +1,20 @@
+<h1>LOGIN</h1>
+
+
+<% if @error %>
+  <%= puts "ERROR(S):" %>
+  <% @error.each do |error|%>
+    <br>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/sessions" method="POST">
+  <label for="email">Email:</label>
+    <input type="text" name="email">
+    <br>
+  <label for="password">Password:</label>
+    <input type="password" name="password">
+    <br>
+    <input type="submit" name="Create Session" value="Login">
+</form>
