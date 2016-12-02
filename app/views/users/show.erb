@@ -9,9 +9,17 @@
   <ul>
     <% @cities.each do |location| %>
     <li>
-      <a href="/users/<%= @user.id %>"><%= location.city %></a>
+      <form id="location_id-<%= location.id %>" action="/">
+        <input type="hidden" name="city" value="<%= location.city %>">
+        <input type = "hidden" name="state" value="<%= location.state %>">
+        <input type="submit" value="<%= location.city %>">
+      </form>
+      <div class="hello" id="city-show-form-<%=location.id%>">
+        <ul>
+          <li class="temperature">Temperature: </li>
+        </ul>
+      </div>
     </li>
     <% end %>
   </ul>
-
 </div>

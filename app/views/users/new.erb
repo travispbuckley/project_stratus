@@ -1,5 +1,6 @@
-<%= :"/_errors", layout: false %>
+<%= erb :"/_errors", layout: false %>
 
+<div>
   <form method="post" action="/users">
     <label> Username:</label>
     <input name="user[username]" type="text">

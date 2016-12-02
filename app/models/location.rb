@@ -4,8 +4,8 @@ class Location < ActiveRecord::Base
 
   validates :city, :state, {presence: true}
 
-  def create_url
-    "http://api.wunderground.com/api/0f9d8611536a96e6/conditions/q/#{self.state}/#{self.city}.json"
+  def create_url(state, city)
+    "http://api.wunderground.com/api/0f9d8611536a96e6/conditions/q/#{state}/#{city}.json"
   end
 
 end
