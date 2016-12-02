@@ -9,7 +9,7 @@
   <ul>
     <% @cities.each do |location| %>
     <li>
-      <form id="location_id-<%= location.id %>" action="/">
+      <form id="<%= location.id %>" action="/">
         <input type="hidden" name="city" value="<%= location.city %>">
         <input type = "hidden" name="state" value="<%= location.state %>">
         <input type="submit" value="<%= location.city %>">
