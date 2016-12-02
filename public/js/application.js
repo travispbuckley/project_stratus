@@ -8,7 +8,7 @@ $(document).ready(function() {
       return that.attr("id");
     }
 
-    $.get("http://api.wunderground.com/api/0f9d8611536a96e6/conditions/q/"+state+"/"+city+".json")
+    $.get("https://api.wunderground.com/api/0f9d8611536a96e6/conditions/q/"+state+"/"+city+".json")
       .done(function(response){
         var item = getId();
         $("#city-show-form-"+item).replaceWith(response.current_observation.feelslike_f);
