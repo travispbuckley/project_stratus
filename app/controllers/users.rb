@@ -16,6 +16,7 @@ end
 get '/users/:id' do
   if current_user == User.find(params[:id])
     @user = current_user
+    @cities = @user.cities
     erb :"/users/show"
   else
     redirect '/'

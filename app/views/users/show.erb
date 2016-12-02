@@ -1,1 +1,17 @@
 <h1>Welcome, <%= @user.username %></h1>
+
+<div>
+  Click <a href="/">here</a> to check your weather!
+</div>
+
+<div id="check-weather">
+  <h5>Click below to check your cities weather</h5>
+  <ul>
+    <% @cities.each do |location| %>
+    <li>
+      <a href="/users/<%= @user.id %>"><%= location.city %></a>
+    </li>
+    <% end %>
+  </ul>
+
+</div>

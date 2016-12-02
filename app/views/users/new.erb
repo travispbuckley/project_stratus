@@ -1,12 +1,4 @@
-<div class="container">
-<% if @errors %>
-  <h3> ERRORS: </h3>
-  <% @errors.each do |error| %>
-    <%= error %>
-    <br>
-  <%end %>
-<br>
-<% end %>
+<%= :"/_errors", layout: false %>
 
   <form method="post" action="/users">
     <label> Username:</label>
