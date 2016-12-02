@@ -11,11 +11,7 @@ $(document).ready(function() {
     $.get("http://api.wunderground.com/api/0f9d8611536a96e6/conditions/q/"+state+"/"+city+".json")
       .done(function(response){
         var item = getId();
-        $("#city-show-form-"+item).append(response.current_observation.feelslike_f);
-        // $(that).closest(".show-city").removeClass('show-city');
-        // $(that).closest(".hello").addClass('display-city');
-
-        // debugger
-    })
+        $("#city-show-form-"+item).replaceWith(response.current_observation.feelslike_f);
+      })
   })
 });
